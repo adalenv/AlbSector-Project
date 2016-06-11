@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="unicode">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="img.js"></script>
+<script src="jquery.min.js"></script>
+<script src="jquery.sticky.js"></script>
+<script>
+  $(document).ready(function(){
+    $("#dmenu").sticky({topSpacing:0});
+  });
+</script>
+<script>
+function init() {
+  window.addEventListener('scroll', function(e){
+    var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+        shrinkOn = 2,
+        header = document.querySelector("header");
+    if (distanceY > shrinkOn) {
+      header.setAttribute("class","smaller");
+    } else {
+        header.removeAttribute("class");
+    }
+  });
+}
+window.onload = init();
+</script>
+	<title>Videos</title>
+</head>
+
+<body>
+	<header style="width:100%;height:100px;">
+<img src="images/logo.png" width="100%" height="100%">
+<div >
+</div>
+</header>
+<center>
+<div id="dmenu">
+<ul id="menu"  >
+
+<li><a href="index.html">Kryefaqja</a></li>
+<li><a href="profil.html">Profili</a></li>
+<li><a href="skedar.html">Skedaret</a></li>
+<li><a href="tutoriale.html">Tutoriale</a></li>
+<li class="active"><a href="video.html">Video</a></li>
+<li><a href="projekt.html">Projekte</a></li>
+<li><a href="kontakt.html">Kontakt</a></li>
+<li><a href="about.html">Rreth nesh</a></li>
+</ul>
+</div>
+</center>
+
+<div align="center" width="720px" height="720px">
+<p>video 1 </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eAqgXhblr-w" frameborder="0" allowfullscreen></iframe>
+
+<div algin="center" width="720px" height="720px">
+<p>video 2</p>
+<iframe width="560"height="315" src="https://www.youtube.com/embed/Oqm_aHSBNfM" frameborder="0" alowfullscreen></iframe>
+</div>
+
+
+
+<div>
+<center>
+<hr width="150px">
+<p>© multimedia.al</p>
+</center>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+html{
+	background:rgb(233,234,237);
+	}
+#post{	
+ flex: 1;
+       float:left;
+		margin:10px 10px 10px 10px;
+		background-color:white;
+		width:240px;
+		height:270px;
+		border 4px;
+		
+	}
+	#post:hover{background-color:rgb(19, 51, 61);}
+	#post:hover #tit{height:35px}
+	#post:hover #hide{display:block}
+#tit{
+	background:rgb(19, 51, 61);
+	width:240px;
+	height:27px;
+	    border: 2px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+	
+
+	}
+    #shiko{
+        color:aliceblue;
+    }
+
+#dt{float:left;}
+	#tit:hover{}
+#image{
+    border: 2px #13333D;
+    border-style: groove;
+    border-bottom: none;
+
+	margin-left:5px;
+		margin-right:5px;
+			margin-top:5px;
+	}
+#ifr{width:100%;height:240px;}
+#ifrall{
+        width: 99%;
+}
+
+#tit p{
+    color: white;
+text-align:center;
+
+    font-size: larger;
+	display: block;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+	}
+a{text-decoration:none;}
+
+	#hide{width:240px;height:247px;opacity:0.88;position:absolute;
+    background:rgb(19, 51, 61);display:none}

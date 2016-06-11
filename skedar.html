@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Te gjitha-->
+<meta charset="unicode">
+<script src="jquery.min.js"></script>
+<script src='jquery.velocity.min.js'></script>
+<link rel="stylesheet" href="css/log.css">
+<!-- STILI CSS -->
+<link rel="stylesheet" type="text/css" href="style.css">
+<!-- JQUERY per menu -->
+<script src="jquery.sticky.js"></script>
+<script>
+  $(document).ready(function(){
+    $("#menu").sticky({topSpacing:0});
+  });
+</script>
+<!-- per butonin ON TOP -->
+<script src="top.js"></script>
+
+	<title>Skedaret</title>
+</head>
+
+<body>
+<header style="width:100%;height:100px;"> 
+   <center>
+   <a href="index.html" class="logo">
+  <span class="m1 big">ALB</span><span class="m2 big">sector</span>
+</a>
+
+
+        <script src="js/index.js"></script>
+
+    </center>
+</header>
+<center>
+<nav id="menu">
+
+  <ul id="menu-closed"  >
+	<li  ><a href="index.html"><img src='images/logo1.png' width='150px'  height='44px'>  </a> </li>
+    
+    <li><a href="profil.html">Profili</a></li>
+    <li><a href="skedar.html">Skedaret</a></li>
+    <li><a href="tutoriale.html">Tutoriale</a></li>
+    <li><a href="video.html">Video</a></li>
+    <li><a href="projekt.html">Projekte</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="about.html">Rreth nesh</a></li>
+ 
+     
+	<li><a href="#menu-closed">&#215; Close menu</a></li>
+		<li><a href="#menu">&#9776; Menu</a></li>
+  </ul>
+</nav>
+
+</center>
+<div id="skedar">
+<style>
+th {background: -webkit-linear-gradient(top, rgba(30,87,153,1) 0%,rgba(125,185,232,0) 100%);}
+td {background-color:#3B3738}
+/* Demo 2 */
+input {
+	outline: none;
+}
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
+
+
+input[type=search] {
+	background: #ededed url(search-icon.png) no-repeat 9px center;
+	border: solid 1px rgb(19, 51, 61);
+	padding: 9px 10px 9px 32px;
+	width: 55px;
+
+	-webkit-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+}
+input[type=search]:focus {
+	width: 150px;
+	background-color: #fff;
+	border-color: rgba(30,87,153,1);
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+
+}
+
+
+input:-moz-placeholder {
+	color: rgb(19, 51, 61);
+}
+input::-webkit-input-placeholder {
+	color:rgb(19, 51, 61);
+}
+</style>
+<script>
+$(function(){
+  $('#demo-2').keyup(function(){
+    var val = $(this).val().toLowerCase();
+
+    $('td').closest('tr').hide();
+    $('td').closest('tr').each(function(){
+
+    var text = $(this).text().toLowerCase();
+      if(text.indexOf(val) !== -1){
+        $(this).show();
+      }
+    });
+  });
+});</script>
+<br>
+ <center>
+<input  type="search"  id="demo-2" placeholder="Kerko"/>
+</center>
+<br>
+<table  width="100%" height="100%" align="center" style="text-align:center">
+	<th style="color:black">
+			<p>Emri</p>
+		</th>
+		
+		<th style="color:black">
+			<b>Autori</b>
+		</th>
+		
+		<th style="color:black">
+			<b>Shkarko</b>
+		
+	</th>
+
+<tr>
+	<td>
+		<p>Dev C++</p>
+	</td>
+	<td>
+		<p>Bloodshed Software</p>
+	</td>
+	<td>
+		<a  href="http://devcpp.com"><u>Link</u></a>
+	</td>
+</hr>
+
+<tr>
+	<td>
+		<p>Photoshop</p>
+	</td>
+	<td>
+		<p>Adobe</p>
+	</td>
+	<td>
+		<a  href="http://adobe.com"><u>Link</u></a>
+	</td>
+</hr>
+
+<tr>
+	<td>
+		<p>Notepad ++</p>
+	</td>
+	<td>
+		<p>Notepad ++ Team</p>
+	</td>
+	<td>
+		<a  href="http://notepad-plus-plus.org"><u>Link</u></a>
+	</td>
+</hr>
+
+<tr>
+	<td>
+		<p>VLC Media Player</p>
+	</td>
+	<td>
+		<p>VideoLAN</p>
+	</td>
+	<td>
+		<a  href="http://vlc.com"><u>Link</u></a>
+	</td>
+</hr>
+
+<tr>
+	<td>
+		<p>Dev C++</p>
+	</td>
+	<td>
+		<p>Bloodshed Software</p>
+	</td>
+	<td>
+		<a  href="http://devcpp.com"><u>Link</u></a>
+	</td>
+</hr>
+
+<tr>
+	<td>
+		<p>Dev C++</p>
+	</td>
+	<td>
+		<p>Bloodshed Software</p>
+	</td>
+	<td>
+		<a  href="http://devcpp.com"><u>Link</u></a>
+	</td>
+</hr>
+<tr>
+	<td>
+		<p>Dev C++</p>
+	</td>
+	<td>
+		<p>Bloodshed Software</p>
+	</td>
+	<td>
+		<a  href="http://devcpp.com"><u>Link</u></a>
+	</td>
+</hr>
+
+
+
+
+
+
+
+</table>
+
+
+
+</div>
+<div>
+<center>
+<hr width="150px">
+<p>© multimedia.al</p>
+</center>
+</div>
+
+
+
+</div>
+<a href="#" class="top">&uarr;</a>
+</body>

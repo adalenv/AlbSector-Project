@@ -1,0 +1,25 @@
+10)
+
+
+<html>
+<body>
+<script>
+
+function gjej()
+  {
+ var sh=0;
+    var nr=parseInt(frm.txt1.value);
+    while(nr>0)
+     {
+       sh=sh+nr%10;
+       nr=Math.floor(nr/10);
+      }
+    alert("Shuma e nr eshte  "+sh);    
+         
+   }
+</script>
+<form name="frm"><br>
+Jepni nje numer:<input name="txt1" type="text">
+<input name="b1" onclick="gjej();" type="button" value="display"></form>
+</body>
+</html>

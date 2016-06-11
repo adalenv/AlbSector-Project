@@ -1,0 +1,17 @@
+body {
+	color: white;
+	background-color: #8b4513;
+	font-family: "Bell Gothic Std Black", fantasy;
+	font-size: medium;
+	text-align: justify;
+}
+
+a {
+	color: #fafad2;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ffe4c4;
+	text-decoration: none;
+}
