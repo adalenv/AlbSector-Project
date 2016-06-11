@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Product+Sans);
+
+// CONFIGURABLE
+$hover-time: 2.5s; // the time one full animation cycle takes
+$hover-delay-divisor: 15; // the animation delay divisor; delay is calculated by dividing the hover-time by this number
+$hover-distance: 1; // the distance letter will lift to (in ems)
+$hover-lift-time-percentage: 60%; // the percentage of time letters will spend lifting (rather than falling)
+$letter-initial-scale: 100%; // the initial point letter scale multiplier
+$letter-peak-scale: 115%; // the peak point letter scale multiplier
+$shadow-opacity: 35%; // the shadow's opacity
+$shadow-scattering-initial-divisor: 30; // the initial point shadow scattering divisor; scattering is calculated by dividing the hover-distance by this number
+$shadow-scattering-peak-divisor: 4; // the peak point shadow scattering divisor; scattering is calculated by dividing the hover-distance by this number
+$colors: ("#4285f4", "#ea4335", "#fbbc05", "#4285f4", "#34a853", "#ea4335"); // the letter colors; make sure there is the same number of colors as letters
+
+// UNCONFIGURABLE
+$hover-delay: $hover-time / $hover-delay-divisor;
+$hover-distance: $hover-distance * 1em;
+$letter-initial-scale: $letter-initial-scale / 100%;
+$letter-peak-scale: $letter-peak-scale / 100%;
+$shadow-opacity: $shadow-opacity / 100%;
+$shadow-scattering-initial: $hover-distance / $shadow-scattering-initial-divisor;
+$shadow-scattering-peak: $hover-distance / $shadow-scattering-peak-divisor;
+
+@mixin nth-children {
+  @for $i from 1 through length($colors) {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * $hover-delay;
+      color: unquote(nth($colors, $i));
+    }
+  }
+}
+
+* {
+  text-rendering: optimizeLegibility;
+  font-style: normal;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  color: rgba(#000, 0.87);
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.text {
+  font-family: "Product Sans", "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 20vmin;
+  font-weight: 700;
+  white-space: nowrap;
+  > i {
+    animation: hover $hover-time ease-in-out infinite;
+    display: inline-block;
+    transform: translate3d(0, 0, 0) scale($letter-initial-scale);
+    text-shadow: rgba(#000, $shadow-opacity) 0 0 $shadow-scattering-initial;
+    @include nth-children;
+  }
+}
+
+@keyframes hover {
+  0% {
+    transform: translate3d(0, 0, 0) scale($letter-initial-scale);
+    text-shadow: rgba(#000, $shadow-opacity) 0 0 $shadow-scattering-initial;
+  } #{$hover-lift-time-percentage} {
+    transform: translate3d(0, -$hover-distance, 0) scale($letter-peak-scale);
+    text-shadow: rgba(#000, $shadow-opacity) 0 $hover-distance / $letter-peak-scale $shadow-scattering-peak;
+  } 100% {
+    transform: translate3d(0, 0, 0) scale($letter-initial-scale);
+    text-shadow: rgba(#000, $shadow-opacity) 0 0 $shadow-scattering-initial;
+  }
+}

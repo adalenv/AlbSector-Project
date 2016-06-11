@@ -1,0 +1,98 @@
+@import url(https://fonts.googleapis.com/css?family=Product+Sans);
+* {
+  text-rendering: optimizeLegibility;
+  font-style: normal;
+}
+
+html,
+body {
+  width: 100%;
+  height: 200px;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.center {
+ 
+}
+
+.text {
+  font-family: "Product Sans", "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.text > i {
+  -webkit-animation: hover 2.5s ease-in-out infinite;
+          animation: hover 2.5s ease-in-out infinite;
+  display: inline-block;
+  -webkit-transform: translate3d(0, 0, 0) scale(1);
+          transform: translate3d(0, 0, 0) scale(1);
+  text-shadow: rgba(0, 0, 0, 0.35) 0 0 0.03333em;
+}
+.text > i:nth-child(1) {
+  -webkit-animation-delay: 0.16667s;
+          animation-delay: 0.16667s;
+  color: #4285f4;
+}
+.text > i:nth-child(2) {
+  -webkit-animation-delay: 0.33333s;
+          animation-delay: 0.33333s;
+  color: #ea4335;
+}
+.text > i:nth-child(3) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  color: #fbbc05;
+}
+.text > i:nth-child(4) {
+  -webkit-animation-delay: 0.66667s;
+          animation-delay: 0.66667s;
+  color: #4285f4;
+}
+.text > i:nth-child(5) {
+  -webkit-animation-delay: 0.83333s;
+          animation-delay: 0.83333s;
+  color: #34a853;
+}
+.text > i:nth-child(6) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  color: #ea4335;
+}
+
+@-webkit-keyframes hover {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+            transform: translate3d(0, 0, 0) scale(1);
+    text-shadow: rgba(0, 0, 0, 0.35) 0 0 0.03333em;
+  }
+  60% {
+    -webkit-transform: translate3d(0, -1em, 0) scale(1.15);
+            transform: translate3d(0, -1em, 0) scale(1.15);
+    text-shadow: rgba(0, 0, 0, 0.35) 0 0.86957em 0.25em;
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+            transform: translate3d(0, 0, 0) scale(1);
+    text-shadow: rgba(0, 0, 0, 0.35) 0 0 0.03333em;
+  }
+}
+
+@keyframes hover {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+            transform: translate3d(0, 0, 0) scale(1);
+    text-shadow: rgba(0, 0, 0, 0.35) 0 0 0.03333em;
+  }
+  60% {
+    -webkit-transform: translate3d(0, -1em, 0) scale(1.15);
+            transform: translate3d(0, -1em, 0) scale(1.15);
+    text-shadow: rgba(0, 0, 0, 0.35) 0 0.86957em 0.25em;
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+            transform: translate3d(0, 0, 0) scale(1);
+    text-shadow: rgba(0, 0, 0, 0.35) 0 0 0.03333em;
+  }
+}
