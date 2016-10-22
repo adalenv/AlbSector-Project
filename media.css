@@ -1,0 +1,49 @@
+
+@media screen and (max-width: 668px){
+    .navbar-brand {
+    float: left;
+    display: none;
+}
+}
+
+
+@media screen and (max-width: 768px){
+.isotop-overlay h2 {
+    color: #fff;
+    margin-top: 35%;
+    font-size: 26px;
+}
+}
+
+@media screen and (min-width: 668px){
+.isotop-overlay h2 {
+    color: #fff;
+    margin-top: 35%;
+    font-size: 20px;
+}
+}
+
+
+@media screen and (min-width: 468px){
+.isotop-overlay h2 {
+    color: #fff;
+    margin-top: 35%;
+    font-size: 18px;
+}
+}
+
+@media screen and (min-width: 368px){
+.isotop-overlay h2 {
+    color: #fff;
+    margin-top: 35%;
+    font-size: 15px;
+}
+}
+
+@media screen and (min-width: 357px){
+.isotop-overlay h2 {
+    color: #fff;
+    margin-top: 35%;
+    font-size: 8px;
+}
+}

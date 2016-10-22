@@ -1,10 +1,12 @@
+
 <?php
  
 require( "config.php" );
+
 session_start();
 $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
 $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
- 
+
 if ( $action != "login" && $action != "logout" && !$username ) {
   login();
   exit;
@@ -29,29 +31,47 @@ switch ( $action ) {
   default:
     listArticles();
 }
- 
- 
+
 function login() {
- 
+
+ $cn=mysqli_connect("localhost","root","","cms") or die("Could not Connect My Sql");
+
+
+
+
+
   $results = array();
-  $results['pageTitle'] = "Admin Login | Widget News";
+  $results['pageTitle'] = "Admin Login ";
  
   if ( isset( $_POST['login'] ) ) {
- 
+	
     // User has posted the login form: attempt to log the user in
- 
-    if ( $_POST['username'] == ADMIN_USERNAME && $_POST['password'] == ADMIN_PASSWORD ) {
- 
-      // Login successful: Create a session and redirect to the admin homepage
-      $_SESSION['username'] = ADMIN_USERNAME;
-      header( "Location: admin.php" );
- 
-    } else {
- 
-      // Login failed: display an error message to the user
-      $results['errorMessage'] = "Incorrect username or password. Please try again.";
+$name=$_POST['username'];
+$passw=$_POST['password'];
+    $usern=mysqli_query($cn,"select * from mst_admin where loginid='$name'") or die(mysql_error());
+    if ( mysqli_num_rows($usern)<1) {
+	
+	// Login failed: display an error message to the user
+      $results['errorMessage'] = "User not exist";
       require( TEMPLATE_PATH . "/admin/loginForm.php" );
     }
+	$rs=mysqli_query($cn,"select * from mst_admin where loginid='$name' and pass='$passw'") or die(mysql_error());
+    if ( mysqli_num_rows($rs)<1) {
+	
+	// Login failed: display an error message to the user
+      $results['errorMessage'] = "Incorrect password. Please try again.";
+      require( TEMPLATE_PATH . "/admin/loginForm.php" );
+    }
+	else {
+		
+      // Login successful: Create a session and redirect to the admin homepage
+      $_SESSION['username'] = $name;
+      header( "Location: admin.php" );
+ 
+    } 
+	
+ 
+     
  
   } else {
  
@@ -60,7 +80,7 @@ function login() {
   }
  
 }
- 
+
  
 function logout() {
   unset( $_SESSION['username'] );
